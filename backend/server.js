@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import router from "./router/indexRouter.js";
 import chalk from "chalk";
+import { scheduleCronJobs } from "./cronschedule/cronjobs.js";
 
 dotenv.config();
 const app = express();
@@ -12,6 +13,8 @@ app.use(express.json());
 
 
 app.use("/", router);
+
+scheduleCronJobs();
 app.listen(PORT, () => {
     // console.log(`Server is running on port ${PORT}`);
     const url = `http://localhost:${PORT}`;

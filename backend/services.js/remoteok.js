@@ -44,6 +44,7 @@ export const getRemoteOkJobs = async () => {
 
     // return $.html();//jobs;
     const jobs = data.slice(1);
+    // console.log("slice:-",jobs);
     // console.log(jobs);
   // console.log("Jobs fetched from RemoteOK:", jobs.length);
   let jobData= jobs.map(job => ({
